@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  project:
+    build:
+      context: ./project
+    container_name: project
+    restart: on-failure
+    ports:
+      - '3000:3000'
