@@ -2,7 +2,7 @@ version: "3.9"
 services:
   project:
     build:
-      context: ./project
+      context: ./
     container_name: project
     environment:
       - VITE_API_URL=https://api.project.com
