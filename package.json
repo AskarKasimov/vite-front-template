@@ -5,11 +5,11 @@
   "type": "module",
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
+      "eslint",
+      "prettier"
     ],
     "*.{json,css,scss,md}": [
-      "prettier --write"
+      "prettier"
     ]
   },
   "scripts": {
