@@ -3,7 +3,6 @@ import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
-import prettier from 'eslint-plugin-prettier';
 
 export default [
   { ignores: ['dist'] },
@@ -20,12 +19,12 @@ export default [
         ecmaFeatures: {
           jsx: true,
         },
+        project: true,
       },
     },
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      prettier: prettier,
       '@typescript-eslint': tseslint.plugin,
     },
     rules: {
@@ -37,9 +36,6 @@ export default [
         { allowConstantExport: true },
       ],
       'no-console': 'warn',
-      semi: ['error', 'always'],
-      quotes: ['error', 'single'],
-      'prettier/prettier': 'error',
     },
   },
 ];
