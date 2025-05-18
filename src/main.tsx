@@ -5,9 +5,9 @@ import App from './App.tsx';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { store } from './store';
-import Additional from './pages/Additional/Additional.tsx';
 import { ToastContainer } from 'react-toastify';
-import Home from './pages/Home/Home.tsx';
+import Home from './pages/Home';
+import Additional from './pages/Additional';
 
 const router = createBrowserRouter([
   {
