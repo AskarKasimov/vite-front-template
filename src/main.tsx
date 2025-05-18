@@ -1,21 +1,28 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.scss';
-import App from './pages/Home/App.tsx';
+import App from './App.tsx';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { store } from './store';
 import Additional from './pages/Additional/Additional.tsx';
 import { ToastContainer } from 'react-toastify';
+import Home from './pages/Home/Home.tsx';
 
 const router = createBrowserRouter([
   {
     path: '',
     element: <App />,
-  },
-  {
-    path: '/second',
-    element: <Additional />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: '/second',
+        element: <Additional />,
+      },
+    ],
   },
 ]);
 

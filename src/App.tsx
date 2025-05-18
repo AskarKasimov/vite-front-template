@@ -2,6 +2,7 @@ import ReactLogo from '@assets/react.svg?react';
 import ViteLogo from '@assets/vite.svg?react';
 import { useState } from 'react';
 import styles from './App.module.scss';
+import { Outlet } from 'react-router-dom';
 
 const App = () => {
   const [count, setCount] = useState<number>(0);
@@ -40,6 +41,7 @@ const App = () => {
       <p className={styles.readTheDocs}>
         Click on the Vite and React logos to learn more
       </p>
+      <Outlet />
     </>
   );
 };
