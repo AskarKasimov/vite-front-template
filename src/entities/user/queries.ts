@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { userApi } from '@/api/endpoints/users';
+import { userApi } from '@/shared/api/endpoints/users';
 import { adaptUser } from './adapters';
 import { userDTOSchema } from './schema';
 import { User, UserDTO } from './types.ts';

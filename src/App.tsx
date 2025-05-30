@@ -1,5 +1,5 @@
-import ReactLogo from '@assets/react.svg?react';
-import ViteLogo from '@assets/vite.svg?react';
+import ReactLogo from '@/assets/react.svg?react';
+import ViteLogo from '@/assets/vite.svg?react';
 import styles from './App.module.scss';
 import { Outlet } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
