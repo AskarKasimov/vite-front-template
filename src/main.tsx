@@ -2,12 +2,12 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.scss';
 import App from './App.tsx';
-import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { store } from './store';
 import { ToastContainer } from 'react-toastify';
-import Home from './pages/Home';
-import Additional from './pages/Additional';
+import Home from './features/Home';
+import Additional from './features/Additional';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { queryClient } from './shared/config/queryClient.ts';
 
 const router = createBrowserRouter([
   {
@@ -28,18 +28,18 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Provider store={store}>
+    <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
-      <ToastContainer
-        position="bottom-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        closeOnClick
-        rtl={false}
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-    </Provider>
+    </QueryClientProvider>
+    <ToastContainer
+      position="bottom-right"
+      autoClose={3000}
+      hideProgressBar={false}
+      closeOnClick
+      rtl={false}
+      draggable
+      pauseOnHover
+      theme="light"
+    />
   </StrictMode>
 );

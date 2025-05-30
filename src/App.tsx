@@ -1,12 +1,11 @@
-import ReactLogo from '@assets/react.svg?react';
-import ViteLogo from '@assets/vite.svg?react';
-import { useState } from 'react';
+import ReactLogo from '@/assets/react.svg?react';
+import ViteLogo from '@/assets/vite.svg?react';
 import styles from './App.module.scss';
 import { Outlet } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
+import { countStore } from './shared/store';
 
-const App = () => {
-  const [count, setCount] = useState<number>(0);
-
+const App = observer(() => {
   return (
     <>
       <div>
@@ -31,8 +30,8 @@ const App = () => {
       </div>
       <h1>Vite + React</h1>
       <div className={styles.card}>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => countStore.increment()}>
+          count is {countStore.count}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
@@ -44,6 +43,6 @@ const App = () => {
       <Outlet />
     </>
   );
-};
+});
 
 export default App;
