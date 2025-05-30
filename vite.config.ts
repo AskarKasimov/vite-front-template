@@ -19,6 +19,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@assets': path.resolve(__dirname, 'src/assets'),
+      '@entities': path.resolve(__dirname, 'src/entities'),
     },
   },
   build: {

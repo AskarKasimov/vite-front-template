@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Home from './pages/Home';
 import Additional from './pages/Additional';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { queryClient } from './shared/config/queryClient.ts';
 
 const router = createBrowserRouter([
   {
@@ -26,16 +28,18 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
-      <ToastContainer
-        position="bottom-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        closeOnClick
-        rtl={false}
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+    </QueryClientProvider>
+    <ToastContainer
+      position="bottom-right"
+      autoClose={3000}
+      hideProgressBar={false}
+      closeOnClick
+      rtl={false}
+      draggable
+      pauseOnHover
+      theme="light"
+    />
   </StrictMode>
 );
