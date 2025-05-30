@@ -4,8 +4,8 @@ import './index.scss';
 import App from './App.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import Home from './pages/Home';
-import Additional from './pages/Additional';
+import Home from './features/Home';
+import Additional from './features/Additional';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './shared/config/queryClient.ts';
 

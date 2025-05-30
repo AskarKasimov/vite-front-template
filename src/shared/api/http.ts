@@ -1,4 +1,4 @@
-import { apiClient } from './client';
+import { apiClient } from './client.ts';
 
 export interface HttpClient {
   get<T>(url: string, params?: any): Promise<T>;

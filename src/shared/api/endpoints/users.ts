@@ -1,4 +1,4 @@
-import { http } from '../http';
+import { http } from '../http.ts';
 import { UserDTO } from '@/entities/user/types';
 
 export const userApi = {
